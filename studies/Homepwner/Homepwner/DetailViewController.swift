@@ -8,14 +8,43 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController,UITextFieldDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate {
 
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet var serialNumberField: UITextField!
     @IBOutlet var valueField: UITextField!
     @IBOutlet var dateLabel: UILabel!
+    @IBAction func backgroundTapped(sender: AnyObject) {
+        view.endEditing(true)
+        
+    }
+    @IBOutlet var imageView: UIImageView!
+    @IBAction func takePicture(sender: UIBarButtonItem) {
+        
+        let imagePicker = UIImagePickerController()
+        
+        // if the device has a camera, take a picture; otherwise,
+        // just pick from photo libraly
+        
+        if UIImagePickerController.isSourceTypeAvailable(.Camera) {
+            imagePicker.sourceType = .Camera
+        } else {
+            imagePicker.sourceType = .PhotoLibrary
+        }
+        
+        imagePicker.delegate = self
+        
+        // Place image picker on the screen
+        presentViewController(imagePicker, animated: true, completion: nil)
+        
+    }
     
-    var item: Item!
+    
+    var item: Item! {
+        didSet {
+            navigationItem.title = item.name
+        }
+    }
     
     let numberFormatter: NSNumberFormatter = {
         let formatter = NSNumberFormatter()
@@ -59,6 +88,9 @@ class DetailViewController: UIViewController {
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         
+        //Clear key board
+        view.endEditing(true)
+        
         // "Save changed item"
         item.name = nameField.text ?? ""
         item.serialNumber = serialNumberField.text
@@ -69,6 +101,11 @@ class DetailViewController: UIViewController {
             item.valueInDollars = 0
         }
         
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
 

@@ -34,35 +34,35 @@ class ItemsViewController: UITableViewController {
         
     }
     
-    @IBAction func toggleEditingMode(sender: AnyObject){
-        
-        // if you are in editing mode
-        if editing {
-            // Change text of button to inform user of state
-            sender.setTitle("Edit", forState: .Normal)
-            
-            // Turn off editing mode
-            setEditing(false, animated: true)
-        } else {
-            
-            // Change text of button to inform user of state
-            sender.setTitle("Done", forState: .Normal)
-            
-            // Enter editing
-            setEditing(true, animated: true)
-        }
-        
-    }
+//    @IBAction func toggleEditingMode(sender: AnyObject){
+//        
+//        // if you are in editing mode
+//        if editing {
+//            // Change text of button to inform user of state
+//            sender.setTitle("Edit", forState: .Normal)
+//            
+//            // Turn off editing mode
+//            setEditing(false, animated: true)
+//        } else {
+//            
+//            // Change text of button to inform user of state
+//            sender.setTitle("Done", forState: .Normal)
+//            
+//            // Enter editing
+//            setEditing(true, animated: true)
+//        }
+//        
+//    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // get height of the status bar
-        let statusBarHeight = UIApplication.sharedApplication().statusBarFrame.height
-        
-        let insets = UIEdgeInsets(top: statusBarHeight, left: 0, bottom: 0, right: 0)
-        tableView.contentInset = insets
-        tableView.scrollIndicatorInsets = insets
+//        let statusBarHeight = UIApplication.sharedApplication().statusBarFrame.height
+//        
+//        let insets = UIEdgeInsets(top: statusBarHeight, left: 0, bottom: 0, right: 0)
+//        tableView.contentInset = insets
+//        tableView.scrollIndicatorInsets = insets
         
         //tableView.reloadData()
         
@@ -175,6 +175,12 @@ class ItemsViewController: UITableViewController {
         
         // Update the model
         itemStore.moveItemAtIndex(sourceIndexPath.row, toIndex: destinationIndexPath.row)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        navigationItem.leftBarButtonItem = editButtonItem()
     }
     
 
