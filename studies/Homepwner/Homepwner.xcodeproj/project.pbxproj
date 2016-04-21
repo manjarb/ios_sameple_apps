@@ -17,6 +17,7 @@
 		DE054EB51CB6632B00DC4353 /* ItemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE054EB41CB6632B00DC4353 /* ItemStore.swift */; };
 		DE8148531CB7ADFD005069EA /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8148521CB7ADFD005069EA /* ItemCell.swift */; };
 		DED85C311CC5586E009367D5 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED85C301CC5586E009367D5 /* DetailViewController.swift */; };
+		DEF4DA6E1CC78DA400EA0178 /* ImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF4DA6D1CC78DA400EA0178 /* ImageStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		DE054EB41CB6632B00DC4353 /* ItemStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemStore.swift; sourceTree = "<group>"; };
 		DE8148521CB7ADFD005069EA /* ItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		DED85C301CC5586E009367D5 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		DEF4DA6D1CC78DA400EA0178 /* ImageStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 				DE054EB41CB6632B00DC4353 /* ItemStore.swift */,
 				DE8148521CB7ADFD005069EA /* ItemCell.swift */,
 				DED85C301CC5586E009367D5 /* DetailViewController.swift */,
+				DEF4DA6D1CC78DA400EA0178 /* ImageStore.swift */,
 			);
 			path = Homepwner;
 			sourceTree = "<group>";
@@ -153,6 +156,7 @@
 				DE054EB31CB65CC100DC4353 /* Item.swift in Sources */,
 				DE054EA11CB65C4100DC4353 /* ViewController.swift in Sources */,
 				DE8148531CB7ADFD005069EA /* ItemCell.swift in Sources */,
+				DEF4DA6E1CC78DA400EA0178 /* ImageStore.swift in Sources */,
 				DE054EB11CB65C8100DC4353 /* ItemsViewController.swift in Sources */,
 				DE054EB51CB6632B00DC4353 /* ItemStore.swift in Sources */,
 				DE054E9F1CB65C4100DC4353 /* AppDelegate.swift in Sources */,

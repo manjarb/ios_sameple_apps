@@ -39,12 +39,32 @@ class DetailViewController: UIViewController,UITextFieldDelegate,UINavigationCon
         
     }
     
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        
+        // Get picked image from info dictionary
+        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        
+        // Store the image in the imageStore for the item's key
+        imageStore.setImage(image, forKey: item.itemKey)
+        
+        // Put that image on the screen in the image view
+        imageView.image = image
+        
+        // Take image picker off the screen - 
+        // you must call this dismiss method
+        dismissViewControllerAnimated(true, completion: nil)
+        
+        
+    }
+    
     
     var item: Item! {
         didSet {
             navigationItem.title = item.name
         }
     }
+    
+    var imageStore: ImageStore!
     
     let numberFormatter: NSNumberFormatter = {
         let formatter = NSNumberFormatter()
@@ -78,6 +98,15 @@ class DetailViewController: UIViewController,UITextFieldDelegate,UINavigationCon
         serialNumberField.text = item.serialNumber
         valueField.text = numberFormatter.stringFromNumber(item.valueInDollars)
         dateLabel.text = dateFormatter.stringFromDate(item.dateCreated)
+        
+        // Get the item key
+        let key = item.itemKey
+        
+        // If there is an associated image with the item
+        // Display it on the image View
+        let imageToDisplay = imageStore.imageForKey(key)
+        imageView.image = imageToDisplay
+        
     }
 
     override func didReceiveMemoryWarning() {
