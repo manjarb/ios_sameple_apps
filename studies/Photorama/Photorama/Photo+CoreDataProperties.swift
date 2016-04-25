@@ -20,5 +20,6 @@ extension Photo {
     @NSManaged var dateTaken: NSDate
     //@NSManaged var remoteURL: NSObject?
     @NSManaged var remoteURL: NSURL
+    @NSManaged var tags: Set<NSManagedObject>
 
 }

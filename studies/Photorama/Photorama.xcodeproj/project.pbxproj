@@ -21,6 +21,9 @@
 		DE2F31601CCC089C000087BC /* Photo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2F315E1CCC089C000087BC /* Photo+CoreDataProperties.swift */; };
 		DE2F31611CCC089C000087BC /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2F315F1CCC089C000087BC /* Photo.swift */; };
 		DE2F31631CCC0A59000087BC /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2F31621CCC0A59000087BC /* CoreDataStack.swift */; };
+		DE2F31651CCCC63F000087BC /* ImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2F31641CCCC63F000087BC /* ImageStore.swift */; };
+		DE2F31671CCD0F63000087BC /* TagsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2F31661CCD0F63000087BC /* TagsViewController.swift */; };
+		DE2F31691CCD1311000087BC /* TagDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2F31681CCD1311000087BC /* TagDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +43,9 @@
 		DE2F315E1CCC089C000087BC /* Photo+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Photo+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		DE2F315F1CCC089C000087BC /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		DE2F31621CCC0A59000087BC /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		DE2F31641CCCC63F000087BC /* ImageStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageStore.swift; sourceTree = "<group>"; };
+		DE2F31661CCD0F63000087BC /* TagsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagsViewController.swift; sourceTree = "<group>"; };
+		DE2F31681CCD1311000087BC /* TagDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,12 +87,15 @@
 				DE2F314F1CCA066D000087BC /* FlickrAPI.swift */,
 				DE2F31511CCA21C7000087BC /* PhotoStore.swift */,
 				DE2F31551CCBE4F1000087BC /* PhotoDataSource.swift */,
+				DE2F31641CCCC63F000087BC /* ImageStore.swift */,
 				DE2F31571CCBE87D000087BC /* PhotoCollectionViewCell.swift */,
 				DE2F31591CCC001B000087BC /* PhotoInfoViewController.swift */,
 				DE2F315B1CCC0720000087BC /* Photorama.xcdatamodeld */,
 				DE2F315E1CCC089C000087BC /* Photo+CoreDataProperties.swift */,
 				DE2F315F1CCC089C000087BC /* Photo.swift */,
 				DE2F31621CCC0A59000087BC /* CoreDataStack.swift */,
+				DE2F31661CCD0F63000087BC /* TagsViewController.swift */,
+				DE2F31681CCD1311000087BC /* TagDataSource.swift */,
 			);
 			path = Photorama;
 			sourceTree = "<group>";
@@ -168,11 +177,14 @@
 				DE2F31521CCA21C7000087BC /* PhotoStore.swift in Sources */,
 				DE2F31611CCC089C000087BC /* Photo.swift in Sources */,
 				DE2F31561CCBE4F2000087BC /* PhotoDataSource.swift in Sources */,
+				DE2F31671CCD0F63000087BC /* TagsViewController.swift in Sources */,
 				DE2F31631CCC0A59000087BC /* CoreDataStack.swift in Sources */,
 				DE2F31581CCBE87D000087BC /* PhotoCollectionViewCell.swift in Sources */,
 				DE2F31601CCC089C000087BC /* Photo+CoreDataProperties.swift in Sources */,
 				DE2F315A1CCC001B000087BC /* PhotoInfoViewController.swift in Sources */,
+				DE2F31691CCD1311000087BC /* TagDataSource.swift in Sources */,
 				DE2F313C1CC9E57A000087BC /* AppDelegate.swift in Sources */,
+				DE2F31651CCCC63F000087BC /* ImageStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

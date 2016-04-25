@@ -27,41 +27,51 @@ class PhotosViewController: UIViewController,UICollectionViewDelegate {
         store.fetchRecentPhotos() {
             (PhotosResult) -> Void in
             
-            NSOperationQueue.mainQueue().addOperationWithBlock {
-                switch PhotosResult {
-                case let .Success(photos):
-                    print("SuccessFully found \(photos.count) recent photos.")
-                    
-    //                if let firstPhoto = photos.first {
-    //                    self.store.fetchImageForPhoto(firstPhoto) {
-    //                        (imageResult) -> Void in
-    //                        
-    //                        switch imageResult {
-    //                        case let .Success(image):
-    //                            //self.imageView.image = image
-    //                            
-    //                            NSOperationQueue.mainQueue().addOperationWithBlock {
-    //                                //self.imageView.image = image
-    //                                //print(image)
-    //                            }
-    //                            
-    //                        case let .Failure(error):
-    //                            print("Error downloading image: \(error)")
-    //                        }
-    //                    }
-    //                }
-                    
-                    self.photoDataSource.photos = photos
-                    
-                case let .Failure(error):
-                    self.photoDataSource.photos.removeAll()
-                    print("Error fetching recent photos: \(error)")
-                    
-                }
-                
+//            NSOperationQueue.mainQueue().addOperationWithBlock {
+//                switch PhotosResult {
+//                case let .Success(photos):
+//                    print("SuccessFully found \(photos.count) recent photos.")
+//                    
+//    //                if let firstPhoto = photos.first {
+//    //                    self.store.fetchImageForPhoto(firstPhoto) {
+//    //                        (imageResult) -> Void in
+//    //                        
+//    //                        switch imageResult {
+//    //                        case let .Success(image):
+//    //                            //self.imageView.image = image
+//    //                            
+//    //                            NSOperationQueue.mainQueue().addOperationWithBlock {
+//    //                                //self.imageView.image = image
+//    //                                //print(image)
+//    //                            }
+//    //                            
+//    //                        case let .Failure(error):
+//    //                            print("Error downloading image: \(error)")
+//    //                        }
+//    //                    }
+//    //                }
+//                    
+//                    self.photoDataSource.photos = photos
+//                    
+//                case let .Failure(error):
+//                    self.photoDataSource.photos.removeAll()
+//                    print("Error fetching recent photos: \(error)")
+//                    
+//                }
+//                
+//                self.collectionView.reloadSections(NSIndexSet(index: 0))
+//                
+//            }
+            
+            let sortByDateTaken = NSSortDescriptor(key: "dateTaken", ascending: true)
+            let allPhotos = try! self.store.fetchMainQueuePhotos(predicate: nil,
+                sortDescriptors: [sortByDateTaken])
+            
+            NSOperationQueue.mainQueue().addOperationWithBlock() {
+                self.photoDataSource.photos = allPhotos
                 self.collectionView.reloadSections(NSIndexSet(index: 0))
-                
             }
+            
         }
     }
     
